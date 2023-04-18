@@ -2,8 +2,8 @@
 left to right direction
 actor 田中さん
 actor 鈴木さん
-usecase 出荷状況
-usecase 注文商品
+usecase 出荷状況のシステム担当
+usecase 注文商品のシステム担当
 
 rectangle 販売管理システム{
     usecase 商品の出荷    
