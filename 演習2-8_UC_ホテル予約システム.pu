@@ -1,0 +1,29 @@
+@startuml 演習2-8
+actor 利用者
+actor ホテル従業員
+actor ホテル管理者
+
+rectangle ホテル予約システム{
+    usecase "空室状況閲覧" as a
+    usecase "部屋予約" as b
+    usecase "空室状況入力" as c
+    usecase "予約集計" as d
+    usecase "会員登録" as e
+    usecase "ログイン" as f
+    usecase "キャンペーン価格" as g
+    usecase "キャンペーン期間" as h
+}
+利用者 --> a
+a --> ホテル従業員 : 空室状況入力
+利用者 --> b
+b --> ホテル従業員 : 部屋予約入力
+ホテル従業員 --> c
+ホテル管理者 --> d
+利用者 --> e
+e --> b : 予約時に会員登録
+利用者 --> f
+ホテル従業員 --> f
+ホテル管理者 --> f
+利用者 --> g
+h --> g
+@enduml
