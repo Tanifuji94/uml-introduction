@@ -7,22 +7,27 @@ class 顧客{
     住所:string
     ---
     + get 氏名():string
-    + get 氏名(name):string
+    + set氏名(name:String):void
 }
 class 車{
-    管理番号:string
-    車種:string
+    -管理番号:string
+    -車種:string
 }
 class 予約{
-    予約番号:string
-    管理番号:string
-    日付:string
-    顧客ID:int
+    -予約番号:string
+    -管理番号:string
+    -日付:string
+    -顧客ID:int
 }
 class 空車リスト{
-    管理番号:string
+    -管理番号:string
 }
 class 貸出{
-    貸出番号:string
+    -貸出番号:string
 }
+hide 顧客 circle
+hide 車 circle
+hide 予約 circle
+hide 空車リスト circle
+hide 貸出 circle
 @enduml
