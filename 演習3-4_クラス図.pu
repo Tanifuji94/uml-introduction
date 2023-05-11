@@ -1,0 +1,14 @@
+@startuml 演習3-4-2
+class 車{
+    - 車種:string
+    - メーカー:string
+    - 色:string
+    - エンジン:string
+}
+class タイヤ{
+    - メーカー:string
+    - サイズ:int
+    - 種類:string
+}
+車 "1" o-- "4" タイヤ
+@enduml

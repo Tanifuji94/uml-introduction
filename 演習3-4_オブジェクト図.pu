@@ -1,0 +1,37 @@
+@startuml 演習3-4-1
+object "車" as car {
+    車種: 
+    メーカー: 
+    色: 
+    エンジン: 
+}
+
+object "タイヤ1" as tire1 {
+    メーカー: 
+    サイズ: 
+    種類: 
+}
+
+object "タイヤ2" as tire2 {
+    メーカー: 
+    サイズ: 
+    種類: 
+}
+
+object "タイヤ3" as tire3 {
+    メーカー: 
+    サイズ: 
+    種類: 
+}
+
+object "タイヤ4" as tire4 {
+    メーカー: 
+    サイズ: 
+    種類: 
+}
+
+car "4" -- "1" tire1
+car "4" -- "1" tire2
+car "4" -- "1" tire3
+car "4" -- "1" tire4
+@enduml
