@@ -1,0 +1,13 @@
+@startuml 演習4‐2
+hide footbox
+autonumber
+    
+skinparam style strictuml
+participant "<u>user:利用者</u>" as user
+participant "<u>:予約画面</u>" as rog
+activate user
+activate rog
+
+user -> rog: ログインメッセージ()
+rog -> rog: 認証()
+@enduml
