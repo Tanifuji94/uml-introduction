@@ -1,0 +1,8 @@
+@startuml 演習4-3
+activate controller
+activate hotel
+controller -> hotel: 予約操作()
+hotel -> hotel: 予約オブジェクトを作成()
+hotel -> hotel: 予約登録()
+hotel -> hotel: ループ
+@enduml
