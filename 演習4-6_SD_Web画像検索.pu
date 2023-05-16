@@ -1,0 +1,18 @@
+@startuml 演習4-6
+
+actor ユーザー as user
+participant ブラウザ as browser
+participant Webサーバー as webServer
+participant 画像サーバー as imageServer
+
+activate user
+user -> browser: 画像のリンクボタンを押す
+    activate browser
+    browser -> webServer: 画像のファイル名を伝える
+        activate webServer
+        webServer -> imageServer: 画像ファイルを探す
+            activate imageServer
+            imageServer --> webServer: 画像ファイルを返す
+            webServer -> browser: 画像ファイルを提供する
+
+@enduml
