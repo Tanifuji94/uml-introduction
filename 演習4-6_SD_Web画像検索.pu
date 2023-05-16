@@ -13,6 +13,7 @@ user -> browser: 画像のリンクボタンを押す
         webServer -> imageServer: 画像ファイルを探す
             activate imageServer
             imageServer --> webServer: 画像ファイルを返す
-            webServer -> browser: 画像ファイルを提供する
+            deactivate
+            webServer --> browser: 画像ファイルを提供する
 
 @enduml
