@@ -1,28 +1,31 @@
-@startuml 演習4‐5
+@startuml 演習4-5
 
-actor ":会員" as member
-participant ":商品検索画面" as ui
-participant ":商品検索コントローラ" as controller
-participant ":商品" as item
-participant ":商品カテゴリ" as category
-
-activate member
-member -> ui: 商品検索（商品番号）
-    activate ui
-    ui -> controller: 商品検索（商品番号）
-        activate controller
-        controller --> item: <<create>>生成()
-        loop 商品カテゴリ数
-        controller --> category: <<create>>生成()
-        controller -> item: 商品カテゴリ設定()
-            activate item
-            deactivate item
-        end loop
-        controller --> ui: 商品情報
-            deactivate controller
-            
-ui -> ui : 商品情報表示（商品情報）
-activate ui
-    deactivate ui
-
+    hide footbox
+    skinparam style strictuml
+    autonumber
+    actor ":<u>会員</u>" as person
+    participant "<<boundary>>\n :<u>商品検索画面</u>" as boundary
+    participant "<<control>>\n :<u>商品検索コントローラ</u>" as control
+    mainframe sd 商品検索
+        activate person
+            person->boundary: 商品検索(商品番号)
+            activate boundary
+                boundary->control: 商品検索(商品番号)
+                activate control
+                    create "<<entity>>\n :<u>商品</u>" as product
+                    control-->product: <<create>> 生成()
+                    loop 商品カテゴリ数
+                        create "<<entity>>\n :<u>商品カテゴリ</u>" as category
+                        control-->category:<<create>> 生成()
+                        control->product: 商品カテゴリ設定()
+                        activate product
+                        deactivate product
+                    end loop
+                    boundary<--control:商品情報
+                    boundary->boundary:  商品情報表示(商品情報)
+                    activate boundary
+                    deactivate boundary
+                deactivate control
+            deactivate boundary
+        deactivate person
 @enduml
