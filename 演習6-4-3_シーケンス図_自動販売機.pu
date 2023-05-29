@@ -1,0 +1,24 @@
+@startuml 演習6-4-3
+actor 客 as customer
+participant 自動販売機 as machine
+participant 料金装置 as device
+participant ボタン as Button
+participant ベンダー装置 as vendor
+
+customer -> device: お金を料金装置に入れる
+    activate customer
+    customer -> Button: ボタンを押す
+    activate machine
+    machine -> machine: 残りのドリンクを確認する
+        machine -> vendor: ドリンク補充要求（残りが半分以下の種類）
+        activate vendor
+        vendor --> machine: ドリンクを運ぶ
+        deactivate vendor
+        machine -> vendor: 料金回収要求
+        activate vendor
+        vendor --> machine: 料金を回収する
+        deactivate vendor
+        
+machine -> machine: ボタンを押す
+machine -> customer: ドリンクを渡す
+@enduml
