@@ -1,0 +1,16 @@
+@startuml 演習6‐4‐2
+left to right direction
+actor 客
+actor ベンダー
+
+rectangle 自動販売機{
+usecase お金を入れる
+usecase ボタンを押す
+usecase ドリンクを提供する
+}
+
+客 --> お金を入れる
+客 --> ボタンを押す
+ドリンクを提供する <-- ベンダー
+
+@enduml
