@@ -1,0 +1,14 @@
+@startuml 演習6‐5‐2
+left to right direction
+actor ユーザー
+actor ライントレーサー as line
+ユーザー --> (ライントレーサーを使用する)
+
+rectangle {
+line --> (システム起動)
+line --> (右旋回開始)
+line --> (左旋回開始)
+line --> (ラインの右境界線上を進む)
+line --> (システム停止)
+}
+@enduml
