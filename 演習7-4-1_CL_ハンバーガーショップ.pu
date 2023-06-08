@@ -59,5 +59,4 @@ class 割引クーポン {
 肉 -down-|> 材料
 野菜 -down-|> 材料
 チーズ -down-|> 材料
-
 @enduml
