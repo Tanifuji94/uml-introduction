@@ -1,0 +1,43 @@
+@startuml
+left to right direction
+actor "利用者" as fc
+actor "管理者" as mh
+rectangle 盛岡観光地図アプリ(利用者) {
+usecase "ログイン" as UC1
+usecase "ログアウト" as UC2
+usecase "ユーザー登録" as UC3
+usecase "観光地・飲食店登録" as UC4
+usecase "観光地・飲食店編集" as UC5
+usecase "観光地・飲食店削除" as UC6
+usecase "口コミ" as UC7
+usecase "検索機能" as UC8
+usecase "お問い合わせ" as UC9
+usecase "翻訳機能" as UC10
+}
+fc --> UC1
+fc --> UC2
+fc --> UC3
+fc --> UC4
+fc --> UC5
+fc --> UC6
+fc --> UC7
+fc --> UC8
+fc --> UC9
+fc --> UC10
+
+left to right direction
+rectangle 盛岡観光地図アプリ(管理者) {
+usecase "ログイン" as 1
+usecase "ログアウト" as 2
+usecase "ユーザー情報削除" as 3
+usecase "観光地・飲食店編集" as 4
+usecase "観光地・飲食店削除" as 5
+usecase "お問い合わせ確認" as 6
+}
+mh --> 1
+mh --> 2
+mh --> 3
+mh --> 4
+mh --> 5
+mh --> 6
+@enduml
